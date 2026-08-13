@@ -3,56 +3,54 @@
    script.js
    ========================= */
 
-// 料理データ
 const dishes = {
   classic: {
     title: "定番",
-    image: "images/classic.png"
+    image: "classic.png"
   },
 
   cafe: {
     title: "カフェ風",
-    image: "images/cafe.png"
+    image: "cafe.png"
   },
 
   "japanese food": {
     title: "和食",
-    image: "images/japanese food.png"
+    image: "japanese food.png"
   },
 
   "western-style food": {
     title: "洋食",
-    image: "images/western-style food.png"
+    image: "western-style food.png"
   },
 
   pasta: {
     title: "麺・パスタ",
-    image: "images/pasta.png"
+    image: "pasta.png"
   },
 
   udon: {
     title: "うどん",
-    image: "images/udon.png"
+    image: "udon.png"
   },
 
   fruit: {
     title: "フルーツ",
-    image: "images/fruit.png"
+    image: "fruit.png"
   },
 
   desert1: {
     title: "デザート",
-    image: "images/desert1.png"
+    image: "desert1.png"
   },
 
   desert2: {
     title: "デザート 2",
-    image: "images/desert2.png"
+    image: "desert2.png"
   }
 };
 
 
-// カテゴリーを選んだとき
 function showDish(id) {
 
   const dish = dishes[id];
@@ -73,12 +71,14 @@ function showDish(id) {
       alt="${dish.title}の盛り付けガイド"
     >
 
-    <button class="back-button" onclick="backToCategories()">
+    <button
+      class="back-button"
+      onclick="backToCategories()"
+    >
       カテゴリーに戻る
     </button>
   `;
 
-  // 画像のところまで移動
   dishArea.scrollIntoView({
     behavior: "smooth",
     block: "start"
@@ -86,7 +86,6 @@ function showDish(id) {
 }
 
 
-// カテゴリー画面に戻る
 function backToCategories() {
 
   const dishArea = document.getElementById("dishArea");
