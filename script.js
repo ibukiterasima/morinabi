@@ -1,9 +1,9 @@
 /* =========================
    もりナビ
-   script.js
    ========================= */
 
 const dishes = {
+
   classic: {
     title: "定番",
     image: "classic.PNG"
@@ -48,8 +48,13 @@ const dishes = {
     title: "デザート 2",
     image: "desert2.PNG"
   }
+
 };
 
+
+/* =========================
+   ガイド画面を開く
+   ========================= */
 
 function showDish(id) {
 
@@ -60,45 +65,62 @@ function showDish(id) {
     return;
   }
 
-  const dishArea = document.getElementById("dishArea");
 
-  dishArea.innerHTML = `
-    <h2 class="dish-title">${dish.title}</h2>
+  const homeScreen =
+    document.getElementById("homeScreen");
 
-    <img
-      class="dish-image"
-      src="${dish.image}"
-      alt="${dish.title}の盛り付けガイド"
-    >
+  const guideScreen =
+    document.getElementById("guideScreen");
 
-    <button
-      class="back-button"
-      onclick="backToCategories()"
-    >
-      カテゴリーに戻る
-    </button>
-  `;
+  const guideTitle =
+    document.getElementById("guideTitle");
 
-  dishArea.scrollIntoView({
-    behavior: "smooth",
-    block: "start"
-  });
-}
+  const guideImage =
+    document.getElementById("guideImage");
 
 
-function backToCategories() {
+  guideTitle.textContent = dish.title;
 
-  const dishArea = document.getElementById("dishArea");
+  guideImage.src = dish.image;
 
-  dishArea.innerHTML = `
-    <p class="hint">
-      カテゴリーを選ぶと<br>
-      盛り付けガイドが表示されます。
-    </p>
-  `;
+  guideImage.alt =
+    dish.title + "の盛り付けガイド";
+
+
+  homeScreen.classList.remove("active");
+
+  guideScreen.classList.add("active");
+
 
   window.scrollTo({
     top: 0,
-    behavior: "smooth"
+    behavior: "instant"
   });
+
+}
+
+
+/* =========================
+   ホームに戻る
+   ========================= */
+
+function backToHome() {
+
+  const homeScreen =
+    document.getElementById("homeScreen");
+
+  const guideScreen =
+    document.getElementById("guideScreen");
+
+
+  guideScreen.classList.remove("active");
+
+  homeScreen.classList.add("active");
+
+
+  window.scrollTo({
+    top: 0,
+    behavior: "instant"
+  });
+
 }
