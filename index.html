@@ -13,98 +13,120 @@
 
 <body>
 
-  <!-- ヘッダー -->
-  <header class="header">
-    <div class="logo">もりナビ</div>
-  </header>
+  <!-- =========================
+       ホーム画面
+       ========================= -->
+
+  <div id="homeScreen" class="screen active">
+
+    <header class="header">
+      <div class="logo">もりナビ</div>
+    </header>
 
 
-  <!-- メイン -->
-  <main>
+    <main class="home-main">
 
-    <section class="hero">
-      <h1>盛り付けを選ぼう</h1>
-      <p>好きなカテゴリーから選んでね。</p>
-    </section>
+      <section class="hero">
+        <h1>盛り付けを選ぼう</h1>
+        <p>好きなカテゴリーから選んでね。</p>
+      </section>
 
 
-    <!-- カテゴリー -->
-    <section class="categories">
+      <section class="categories">
 
-      <button class="category" onclick="showDish('classic')">
-        <img src="classic.PNG" alt="定番">
-        <span class="category-title">定番</span>
+        <button class="category" onclick="showDish('classic')">
+          <img src="classic.PNG" alt="定番">
+          <span>定番</span>
+        </button>
+
+        <button class="category" onclick="showDish('cafe')">
+          <img src="cafe.PNG" alt="カフェ風">
+          <span>カフェ風</span>
+        </button>
+
+        <button class="category" onclick="showDish('japanese food')">
+          <img src="japanese food.PNG" alt="和食">
+          <span>和食</span>
+        </button>
+
+        <button class="category" onclick="showDish('western-style food')">
+          <img src="western-style food.PNG" alt="洋食">
+          <span>洋食</span>
+        </button>
+
+        <button class="category" onclick="showDish('pasta')">
+          <img src="pasta.PNG" alt="麺・パスタ">
+          <span>麺・パスタ</span>
+        </button>
+
+        <button class="category" onclick="showDish('udon')">
+          <img src="udon.PNG" alt="うどん">
+          <span>うどん</span>
+        </button>
+
+        <button class="category" onclick="showDish('fruit')">
+          <img src="fruit.jpg" alt="フルーツ">
+          <span>フルーツ</span>
+        </button>
+
+        <button class="category" onclick="showDish('desert1')">
+          <img src="desert1.PNG" alt="デザート">
+          <span>デザート</span>
+        </button>
+
+        <button class="category" onclick="showDish('desert2')">
+          <img src="desert2.PNG" alt="デザート2">
+          <span>デザート 2</span>
+        </button>
+
+      </section>
+
+    </main>
+
+  </div>
+
+
+  <!-- =========================
+       ガイド画面
+       ========================= -->
+
+  <div id="guideScreen" class="screen">
+
+    <header class="guide-header">
+
+      <button
+        class="back-button"
+        onclick="backToHome()"
+        aria-label="ホームに戻る">
+        ←
       </button>
 
-      <button class="category" onclick="showDish('cafe')">
-        <img src="cafe.PNG" alt="カフェ風">
-        <span class="category-title">カフェ風</span>
-      </button>
+      <h1 id="guideTitle">うどん</h1>
 
-      <button class="category" onclick="showDish('japanese food')">
-        <img src="japanese food.PNG" alt="和食">
-        <span class="category-title">和食</span>
-      </button>
-
-      <button class="category" onclick="showDish('western-style food')">
-        <img src="western-style food.PNG" alt="洋食">
-        <span class="category-title">洋食</span>
-      </button>
-
-      <button class="category" onclick="showDish('pasta')">
-        <img src="pasta.PNG" alt="麺・パスタ">
-        <span class="category-title">麺・パスタ</span>
-      </button>
-
-      <button class="category" onclick="showDish('udon')">
-        <img src="udon.PNG" alt="うどん">
-        <span class="category-title">うどん</span>
-      </button>
-
-      <button class="category" onclick="showDish('fruit')">
-        <img src="fruit.jpg" alt="フルーツ">
-        <span class="category-title">フルーツ</span>
-      </button>
-
-      <button class="category" onclick="showDish('desert1')">
-        <img src="desert1.PNG" alt="デザート">
-        <span class="category-title">デザート</span>
-      </button>
-
-      <button class="category" onclick="showDish('desert2')">
-        <img src="desert2.PNG" alt="デザート2">
-        <span class="category-title">デザート 2</span>
-      </button>
-
-    </section>
+    </header>
 
 
-    <!-- 盛り付け表示 -->
-    <section id="dishArea" class="dish-area">
+    <main class="guide-main">
 
-      <div class="empty-state">
+      <div class="guide-card">
 
-        <div class="empty-plate"></div>
-
-        <h2>まずは料理を選んでね</h2>
-
-        <p>
-          盛り付けのガイドを見ながら<br>
-          お皿に料理を置いてみよう。
-        </p>
+        <img
+          id="guideImage"
+          class="guide-image"
+          src=""
+          alt=""
+        >
 
       </div>
 
-    </section>
 
-  </main>
+      <p class="guide-message">
+        この盛り付けを見ながら置いてみよう。
+      </p>
 
+    </main>
 
-  <!-- フッター -->
-  <footer>
-    <p>もりナビ</p>
-    <span>盛り付けをナビする。</span>
-  </footer>
+  </div>
 
 
   <script src="script.js"></script>
