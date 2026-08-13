@@ -36,7 +36,7 @@ const dishes = {
 
   fruit: {
     title: "フルーツ",
-    image: "fruit.PNG"
+    image: "fruit.jpg"
   },
 
   desert1: {
