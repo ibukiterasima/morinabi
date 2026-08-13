@@ -8,6 +8,7 @@
 
   <title>もりナビ</title>
 
+  <link rel="icon" type="image/png" href="favicon.png">
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -79,6 +80,12 @@
           <span>デザート 2</span>
         </button>
 
+        <!-- 食卓 -->
+        <button class="category" onclick="openTableMenu()">
+          <div class="table-icon">食</div>
+          <span>食卓</span>
+        </button>
+
       </section>
 
     </main>
@@ -87,7 +94,73 @@
 
 
   <!-- =========================
-       ガイド画面
+       食卓カテゴリー選択画面
+       ========================= -->
+
+  <div id="tableScreen" class="screen">
+
+    <header class="guide-header">
+
+      <button
+        class="back-button"
+        onclick="backToHome()"
+        aria-label="ホームに戻る">
+        ←
+      </button>
+
+      <h1>食卓</h1>
+
+    </header>
+
+
+    <main class="table-main">
+
+      <h2>どんな食卓？</h2>
+
+
+      <section class="table-categories">
+
+        <button
+          class="table-category"
+          onclick="showTable('wasyoku')">
+
+          <img src="wasyoku.png" alt="和食">
+
+          <span>和食</span>
+
+        </button>
+
+
+        <button
+          class="table-category"
+          onclick="showTable('yousyoku')">
+
+          <img src="yousyoku.png" alt="洋食">
+
+          <span>洋食</span>
+
+        </button>
+
+
+        <button
+          class="table-category"
+          onclick="showTable('kobachi')">
+
+          <img src="kobachi.png" alt="小鉢いっぱい">
+
+          <span>小鉢いっぱい</span>
+
+        </button>
+
+      </section>
+
+    </main>
+
+  </div>
+
+
+  <!-- =========================
+       料理ガイド画面
        ========================= -->
 
   <div id="guideScreen" class="screen">
@@ -101,7 +174,7 @@
         ←
       </button>
 
-      <h1 id="guideTitle">うどん</h1>
+      <h1 id="guideTitle">定番</h1>
 
     </header>
 
@@ -118,11 +191,6 @@
         >
 
       </div>
-
-
-      <p class="guide-message">
-        この盛り付けを見ながら置いてみよう。
-      </p>
 
     </main>
 
