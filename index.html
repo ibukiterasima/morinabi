@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <meta name="theme-color" content="#8FAF72">
 
   <title>もりナビ</title>
@@ -13,71 +14,96 @@
 <body>
 
   <header class="header">
-    <h1>もりナビ</h1>
-    <p>見ながら置くだけ。おしゃれな盛り付け。</p>
+    <div class="logo">
+      <span class="logo-main">もりナビ</span>
+      <span class="logo-sub">見ながら置くだけ。</span>
+    </div>
   </header>
+
 
   <main>
 
-    <section class="welcome">
-      <h2>盛り付けを選ぼう</h2>
-      <p>好きなカテゴリーから選んでね。</p>
+    <section class="hero">
+      <h1>盛り付けを選ぼう</h1>
+      <p>
+        料理を選ぶと、盛り付けのポイントが見られます。
+      </p>
     </section>
+
 
     <section class="categories">
 
       <button class="category" onclick="showDish('classic')">
-        <span>定番</span>
+        <span class="category-title">定番</span>
+        <span class="category-description">バランスよく</span>
       </button>
 
       <button class="category" onclick="showDish('cafe')">
-        <span>カフェ風</span>
+        <span class="category-title">カフェ風</span>
+        <span class="category-description">おしゃれに</span>
       </button>
 
       <button class="category" onclick="showDish('japanese food')">
-        <span>和食</span>
+        <span class="category-title">和食</span>
+        <span class="category-description">落ち着いた一皿</span>
       </button>
 
       <button class="category" onclick="showDish('western-style food')">
-        <span>洋食</span>
+        <span class="category-title">洋食</span>
+        <span class="category-description">レストラン風</span>
       </button>
 
       <button class="category" onclick="showDish('pasta')">
-        <span>麺・パスタ</span>
+        <span class="category-title">麺・パスタ</span>
+        <span class="category-description">高さを出して</span>
       </button>
 
       <button class="category" onclick="showDish('udon')">
-        <span>うどん</span>
+        <span class="category-title">うどん</span>
+        <span class="category-description">具をきれいに</span>
       </button>
 
       <button class="category" onclick="showDish('fruit')">
-        <span>フルーツ</span>
+        <span class="category-title">フルーツ</span>
+        <span class="category-description">色を楽しむ</span>
       </button>
 
       <button class="category" onclick="showDish('desert1')">
-        <span>デザート</span>
+        <span class="category-title">デザート</span>
+        <span class="category-description">かわいく盛る</span>
       </button>
 
       <button class="category" onclick="showDish('desert2')">
-        <span>デザート 2</span>
+        <span class="category-title">デザート 2</span>
+        <span class="category-description">ちょっと特別に</span>
       </button>
 
     </section>
 
+
     <section id="dishArea" class="dish-area">
 
-      <p class="hint">
-        カテゴリーを選ぶと<br>
-        盛り付けガイドが表示されます。
-      </p>
+      <div class="empty-state">
+        <div class="empty-plate"></div>
+
+        <h2>まずは料理を選んでね</h2>
+
+        <p>
+          盛り付けのガイドを見ながら<br>
+          お皿に料理を置いてみよう。
+        </p>
+      </div>
 
     </section>
 
   </main>
 
+
   <footer>
     <p>もりナビ</p>
+    <span>盛り付けをナビする。</span>
   </footer>
+
 
   <script src="script.js"></script>
 
