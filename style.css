@@ -1,26 +1,28 @@
-/* =========================
-   もりナビ
-   style.css
-   ========================= */
-
 :root {
   --bg: #F8F4E8;
   --text: #5B5147;
   --header: #8FAF72;
   --accent: #E5B85C;
   --accent-text: #FFFFFF;
-  --card: #FFFDF7;
-  --border: #DDD5C5;
+
+  --white: #FFFDF7;
+  --line: #DED7C8;
+  --shadow: rgba(91, 81, 71, 0.10);
 }
 
 * {
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   background: var(--bg);
   color: var(--text);
+
   font-family:
     "Zen Maru Gothic",
     "Hiragino Maru Gothic ProN",
@@ -28,186 +30,344 @@ body {
     sans-serif;
 }
 
-/* ヘッダー */
+
+/* =========================
+   ヘッダー
+   ========================= */
 
 .header {
   background: var(--header);
-  color: var(--accent-text);
-  text-align: center;
-  padding: 28px 20px 24px;
-  border-radius: 0 0 28px 28px;
+  padding: 22px 24px;
+
+  border-radius: 0 0 30px 30px;
+
+  box-shadow:
+    0 4px 15px var(--shadow);
 }
 
-.header h1 {
-  margin: 0;
-  font-size: 38px;
+.logo {
+  max-width: 900px;
+  margin: auto;
+
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+}
+
+.logo-main {
+  color: #FFFFFF;
+  font-size: 34px;
   font-weight: 700;
   letter-spacing: 0.08em;
 }
 
-.header p {
-  margin: 8px 0 0;
-  font-size: 14px;
+.logo-sub {
+  color: #FFFFFF;
+  font-size: 13px;
+  opacity: 0.9;
 }
 
-/* メイン */
+
+/* =========================
+   メイン
+   ========================= */
 
 main {
-  width: min(100% - 32px, 900px);
-  margin: 0 auto;
-  padding: 36px 0 50px;
+  width: min(900px, calc(100% - 32px));
+  margin: auto;
+  padding: 42px 0 70px;
 }
 
-.welcome {
+
+/* =========================
+   ヒーロー
+   ========================= */
+
+.hero {
   text-align: center;
-  margin-bottom: 26px;
+  margin-bottom: 30px;
 }
 
-.welcome h2 {
+.hero h1 {
   margin: 0;
-  font-size: 24px;
+
+  font-size: 27px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
 }
 
-.welcome p {
-  margin: 8px 0 0;
+.hero p {
+  margin: 10px 0 0;
+
   font-size: 14px;
+  line-height: 1.7;
 }
 
-/* カテゴリー */
+
+/* =========================
+   カテゴリー
+   ========================= */
 
 .categories {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 14px;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 15px;
 }
 
 .category {
-  min-height: 82px;
-  border: 2px solid var(--border);
-  border-radius: 20px;
-  background: var(--card);
+  position: relative;
+
+  min-height: 110px;
+
+  padding: 20px;
+
+  border: 1.5px solid var(--line);
+  border-radius: 22px;
+
+  background: var(--white);
   color: var(--text);
+
   font-family: inherit;
-  font-size: 17px;
-  font-weight: 700;
+
+  text-align: left;
+
   cursor: pointer;
+
+  box-shadow:
+    0 4px 12px var(--shadow);
+
   transition:
     transform 0.15s ease,
-    background 0.15s ease,
+    box-shadow 0.15s ease,
     border-color 0.15s ease;
 }
 
 .category:hover {
-  transform: translateY(-3px);
+  transform: translateY(-4px);
+
   border-color: var(--header);
-  background: #F2F6EA;
+
+  box-shadow:
+    0 8px 20px var(--shadow);
 }
 
 .category:active {
   transform: scale(0.97);
 }
 
-/* 盛り付け画像エリア */
+.category-title {
+  display: block;
+
+  font-size: 19px;
+  font-weight: 700;
+}
+
+.category-description {
+  display: block;
+
+  margin-top: 8px;
+
+  font-size: 12px;
+
+  opacity: 0.7;
+}
+
+
+/* =========================
+   空の状態
+   ========================= */
 
 .dish-area {
-  margin-top: 36px;
+  margin-top: 42px;
+
   text-align: center;
 }
 
-.hint {
-  margin: 0;
-  padding: 35px 20px;
-  border: 2px dashed var(--border);
-  border-radius: 24px;
-  line-height: 1.8;
-  font-size: 15px;
+.empty-state {
+  padding: 45px 20px;
+
+  border: 2px dashed var(--line);
+  border-radius: 28px;
 }
 
-/* 選択後の画像 */
+.empty-state h2 {
+  margin: 20px 0 8px;
+
+  font-size: 19px;
+}
+
+.empty-state p {
+  margin: 0;
+
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+
+/* お皿のイラスト */
+
+.empty-plate {
+  width: 100px;
+  height: 100px;
+
+  margin: auto;
+
+  border-radius: 50%;
+
+  background: var(--white);
+
+  border: 5px solid #E4DDCD;
+
+  box-shadow:
+    inset 0 0 0 10px #F2EEE3,
+    0 5px 15px var(--shadow);
+}
+
+
+/* =========================
+   盛り付け表示
+   ========================= */
 
 .dish-title {
-  margin: 0 0 18px;
-  font-size: 24px;
+  margin: 0 0 20px;
+
+  font-size: 25px;
 }
 
 .dish-image {
   display: block;
-  width: min(100%, 620px);
-  margin: 0 auto;
+
+  width: min(100%, 650px);
+
+  margin: auto;
+
   border-radius: 22px;
-  box-shadow: 0 8px 25px rgba(91, 81, 71, 0.12);
+
+  box-shadow:
+    0 8px 25px var(--shadow);
 }
 
-/* 戻るボタン */
-
 .back-button {
-  margin-top: 22px;
-  padding: 12px 24px;
+  margin-top: 24px;
+
+  padding: 12px 25px;
+
   border: none;
   border-radius: 999px;
+
   background: var(--accent);
   color: var(--accent-text);
+
   font-family: inherit;
-  font-size: 15px;
+
+  font-size: 14px;
   font-weight: 700;
+
   cursor: pointer;
+
+  transition: transform 0.15s ease;
 }
 
 .back-button:hover {
-  opacity: 0.9;
+  transform: translateY(-2px);
 }
 
-/* フッター */
+
+/* =========================
+   フッター
+   ========================= */
 
 footer {
-  padding: 24px;
+  padding: 25px;
+
   text-align: center;
+
+  border-top: 1px solid var(--line);
+
   font-size: 13px;
-  border-top: 1px solid var(--border);
 }
 
 footer p {
   margin: 0;
+
+  font-weight: 700;
 }
 
-/* スマホ */
+footer span {
+  display: block;
 
-@media (max-width: 600px) {
+  margin-top: 5px;
+
+  font-size: 11px;
+
+  opacity: 0.65;
+}
+
+
+/* =========================
+   スマホ
+   ========================= */
+
+@media (max-width: 650px) {
 
   .header {
-    padding: 24px 16px 20px;
-    border-radius: 0 0 22px 22px;
+    padding: 19px 18px;
+
+    border-radius: 0 0 24px 24px;
   }
 
-  .header h1 {
-    font-size: 32px;
+  .logo {
+    display: block;
+
+    text-align: center;
   }
 
-  .header p {
-    font-size: 13px;
+  .logo-main {
+    font-size: 30px;
+  }
+
+  .logo-sub {
+    display: block;
+
+    margin-top: 3px;
   }
 
   main {
-    width: min(100% - 24px, 900px);
-    padding-top: 28px;
+    width: calc(100% - 24px);
+
+    padding-top: 32px;
+  }
+
+  .hero h1 {
+    font-size: 23px;
   }
 
   .categories {
     grid-template-columns: repeat(2, 1fr);
+
     gap: 10px;
   }
 
   .category {
-    min-height: 72px;
-    font-size: 15px;
-    border-radius: 17px;
+    min-height: 85px;
+
+    padding: 16px;
+
+    border-radius: 18px;
   }
 
-  .welcome h2 {
-    font-size: 21px;
+  .category-title {
+    font-size: 16px;
+  }
+
+  .category-description {
+    font-size: 11px;
   }
 
   .dish-image {
-    border-radius: 16px;
+    border-radius: 17px;
   }
 }
