@@ -43,7 +43,7 @@ body {
 
 
 /* =========================
-   ホーム
+   ヘッダー
    ========================= */
 
 .header {
@@ -68,6 +68,11 @@ body {
   letter-spacing: 0.08em;
 }
 
+
+/* =========================
+   ホーム
+   ========================= */
+
 .home-main {
   width: min(900px, calc(100% - 32px));
 
@@ -75,11 +80,6 @@ body {
 
   padding: 42px 0 60px;
 }
-
-
-/* =========================
-   タイトル
-   ========================= */
 
 .hero {
   text-align: center;
@@ -162,25 +162,53 @@ body {
   flex-shrink: 0;
 }
 
-.category:hover {
+.category:hover,
+.table-category:hover {
   transform: translateY(-4px);
 
   box-shadow:
     0 8px 20px var(--shadow);
 }
 
-.category:active {
+.category:active,
+.table-category:active {
   transform: scale(0.97);
 }
 
 
+/* 食卓アイコン */
+
+.table-icon {
+  width: 70px;
+  height: 70px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 15px;
+
+  background: #E5B85C;
+
+  color: #FFFFFF;
+
+  font-size: 32px;
+  font-weight: 700;
+
+  flex-shrink: 0;
+}
+
+
 /* =========================
-   ガイド画面
+   食卓選択画面
    ========================= */
 
 .guide-header {
   position: sticky;
+
   top: 0;
+
   z-index: 10;
 
   height: 72px;
@@ -207,8 +235,80 @@ body {
   font-weight: 700;
 }
 
+.table-main {
+  width: min(800px, calc(100% - 32px));
 
-/* 戻る */
+  margin: auto;
+
+  padding: 40px 0 60px;
+
+  text-align: center;
+}
+
+.table-main h2 {
+  margin: 0 0 28px;
+
+  font-size: 24px;
+}
+
+.table-categories {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 18px;
+}
+
+.table-category {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: 15px;
+
+  padding: 15px;
+
+  border: 1.5px solid var(--line);
+
+  border-radius: 24px;
+
+  background: var(--white);
+
+  color: var(--text);
+
+  font-family: inherit;
+
+  font-size: 18px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 4px 12px var(--shadow);
+
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.table-category img {
+  width: 100%;
+
+  aspect-ratio: 1 / 1;
+
+  object-fit: cover;
+
+  border-radius: 18px;
+}
+
+
+/* =========================
+   戻るボタン
+   ========================= */
 
 .back-button {
   position: absolute;
@@ -247,7 +347,7 @@ body {
 
 
 /* =========================
-   ガイド本体
+   ガイド画面
    ========================= */
 
 .guide-main {
@@ -277,21 +377,12 @@ body {
   display: block;
 
   width: 100%;
-  max-width: 750px;
 
   height: auto;
 
   margin: auto;
 
   border-radius: 18px;
-}
-
-.guide-message {
-  margin: 24px 0 0;
-
-  font-size: 15px;
-
-  line-height: 1.8;
 }
 
 
@@ -340,11 +431,16 @@ body {
     font-size: 15px;
   }
 
-  .category img {
+  .category img,
+  .table-icon {
     width: 54px;
     height: 54px;
 
     border-radius: 12px;
+  }
+
+  .table-icon {
+    font-size: 25px;
   }
 
   .guide-header {
@@ -362,6 +458,35 @@ body {
     height: 40px;
 
     font-size: 25px;
+  }
+
+  .table-main {
+    width: calc(100% - 24px);
+
+    padding-top: 30px;
+  }
+
+  .table-categories {
+    grid-template-columns: 1fr;
+
+    gap: 12px;
+  }
+
+  .table-category {
+    flex-direction: row;
+
+    text-align: left;
+
+    padding: 10px;
+
+    border-radius: 18px;
+  }
+
+  .table-category img {
+    width: 80px;
+    height: 80px;
+
+    flex-shrink: 0;
   }
 
   .guide-main {
