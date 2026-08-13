@@ -3,219 +3,90 @@
 
 <head>
   <meta charset="UTF-8">
-
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1.0">
-
-  <meta name="theme-color"
-        content="#8FAF72">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#8FAF72">
 
   <title>もりナビ</title>
 
-  <!-- Kiwi Maru -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <link
-    href="https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@400;500&display=swap"
-    rel="stylesheet">
-
-  <link rel="stylesheet"
-        href="style.css">
+  <link rel="stylesheet" href="style.css">
 </head>
-
 
 <body>
 
-
   <!-- ヘッダー -->
-
   <header class="header">
-
-    <div class="logo">
-      もりナビ
-    </div>
-
+    <div class="logo">もりナビ</div>
   </header>
 
 
-
   <!-- メイン -->
-
   <main>
 
-
     <section class="hero">
-
-      <h1>
-        盛り付けを選ぼう
-      </h1>
-
-      <p>
-        好きなカテゴリーから選んでね。
-      </p>
-
+      <h1>盛り付けを選ぼう</h1>
+      <p>好きなカテゴリーから選んでね。</p>
     </section>
-
 
 
     <!-- カテゴリー -->
-
     <section class="categories">
 
-
-      <button
-        class="category"
-        onclick="showDish('classic')">
-
-        <img
-          src="classic.PNG"
-          alt="定番">
-
-        <span class="category-title">
-          定番
-        </span>
-
+      <button class="category" onclick="showDish('classic')">
+        <img src="classic.PNG" alt="定番">
+        <span class="category-title">定番</span>
       </button>
 
-
-      <button
-        class="category"
-        onclick="showDish('cafe')">
-
-        <img
-          src="cafe.PNG"
-          alt="カフェ風">
-
-        <span class="category-title">
-          カフェ風
-        </span>
-
+      <button class="category" onclick="showDish('cafe')">
+        <img src="cafe.PNG" alt="カフェ風">
+        <span class="category-title">カフェ風</span>
       </button>
 
-
-      <button
-        class="category"
-        onclick="showDish('japanese food')">
-
-        <img
-          src="japanese food.PNG"
-          alt="和食">
-
-        <span class="category-title">
-          和食
-        </span>
-
+      <button class="category" onclick="showDish('japanese food')">
+        <img src="japanese food.PNG" alt="和食">
+        <span class="category-title">和食</span>
       </button>
 
-
-      <button
-        class="category"
-        onclick="showDish('western-style food')">
-
-        <img
-          src="western-style food.PNG"
-          alt="洋食">
-
-        <span class="category-title">
-          洋食
-        </span>
-
+      <button class="category" onclick="showDish('western-style food')">
+        <img src="western-style food.PNG" alt="洋食">
+        <span class="category-title">洋食</span>
       </button>
 
-
-      <button
-        class="category"
-        onclick="showDish('pasta')">
-
-        <img
-          src="pasta.PNG"
-          alt="麺・パスタ">
-
-        <span class="category-title">
-          麺・パスタ
-        </span>
-
+      <button class="category" onclick="showDish('pasta')">
+        <img src="pasta.PNG" alt="麺・パスタ">
+        <span class="category-title">麺・パスタ</span>
       </button>
 
-
-      <button
-        class="category"
-        onclick="showDish('udon')">
-
-        <img
-          src="udon.PNG"
-          alt="うどん">
-
-        <span class="category-title">
-          うどん
-        </span>
-
+      <button class="category" onclick="showDish('udon')">
+        <img src="udon.PNG" alt="うどん">
+        <span class="category-title">うどん</span>
       </button>
 
-
-      <button
-        class="category"
-        onclick="showDish('fruit')">
-
-        <img
-          src="fruit.jpg"
-          alt="フルーツ">
-
-        <span class="category-title">
-          フルーツ
-        </span>
-
+      <button class="category" onclick="showDish('fruit')">
+        <img src="fruit.jpg" alt="フルーツ">
+        <span class="category-title">フルーツ</span>
       </button>
 
-
-      <button
-        class="category"
-        onclick="showDish('desert1')">
-
-        <img
-          src="desert1.PNG"
-          alt="デザート">
-
-        <span class="category-title">
-          デザート
-        </span>
-
+      <button class="category" onclick="showDish('desert1')">
+        <img src="desert1.PNG" alt="デザート">
+        <span class="category-title">デザート</span>
       </button>
 
-
-      <button
-        class="category"
-        onclick="showDish('desert2')">
-
-        <img
-          src="desert2.PNG"
-          alt="デザート2">
-
-        <span class="category-title">
-          デザート 2
-        </span>
-
+      <button class="category" onclick="showDish('desert2')">
+        <img src="desert2.PNG" alt="デザート2">
+        <span class="category-title">デザート 2</span>
       </button>
-
 
     </section>
 
 
-
     <!-- 盛り付け表示 -->
-
-    <section
-      id="dishArea"
-      class="dish-area">
+    <section id="dishArea" class="dish-area">
 
       <div class="empty-state">
 
         <div class="empty-plate"></div>
 
-        <h2>
-          まずは料理を選んでね
-        </h2>
+        <h2>まずは料理を選んでね</h2>
 
         <p>
           盛り付けのガイドを見ながら<br>
@@ -226,27 +97,17 @@
 
     </section>
 
-
   </main>
 
 
-
+  <!-- フッター -->
   <footer>
-
-    <p>
-      もりナビ
-    </p>
-
-    <span>
-      盛り付けをナビする。
-    </span>
-
+    <p>もりナビ</p>
+    <span>盛り付けをナビする。</span>
   </footer>
-
 
 
   <script src="script.js"></script>
 
 </body>
-
 </html>
