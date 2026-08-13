@@ -3,8 +3,6 @@
   --text: #5B5147;
   --header: #8FAF72;
   --accent: #E5B85C;
-  --accent-text: #FFFFFF;
-
   --white: #FFFDF7;
   --line: #DED7C8;
   --shadow: rgba(91, 81, 71, 0.10);
@@ -14,12 +12,11 @@
   box-sizing: border-box;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
+html,
 body {
   margin: 0;
+  min-height: 100%;
+
   background: var(--bg);
   color: var(--text);
 
@@ -32,7 +29,21 @@ body {
 
 
 /* =========================
-   ヘッダー・ロゴ
+   画面
+   ========================= */
+
+.screen {
+  min-height: 100vh;
+  display: none;
+}
+
+.screen.active {
+  display: block;
+}
+
+
+/* =========================
+   ホーム
    ========================= */
 
 .header {
@@ -47,36 +58,22 @@ body {
 }
 
 .logo {
-  max-width: 900px;
-
-  margin: auto;
-
   color: #FFFFFF;
 
-  font-family:
-    "Hiragino Maru Gothic ProN",
-    "Yu Gothic",
-    sans-serif;
+  text-align: center;
 
   font-size: 36px;
   font-weight: 700;
 
   letter-spacing: 0.08em;
-
-  text-align: center;
 }
 
-
-/* =========================
-   メイン
-   ========================= */
-
-main {
+.home-main {
   width: min(900px, calc(100% - 32px));
 
   margin: auto;
 
-  padding: 42px 0 70px;
+  padding: 42px 0 60px;
 }
 
 
@@ -94,7 +91,6 @@ main {
   margin: 0;
 
   font-size: 27px;
-  font-weight: 700;
 
   letter-spacing: 0.05em;
 }
@@ -103,8 +99,6 @@ main {
   margin: 10px 0 0;
 
   font-size: 14px;
-
-  line-height: 1.7;
 }
 
 
@@ -142,6 +136,9 @@ main {
 
   font-family: inherit;
 
+  font-size: 18px;
+  font-weight: 700;
+
   text-align: left;
 
   cursor: pointer;
@@ -151,8 +148,7 @@ main {
 
   transition:
     transform 0.15s ease,
-    box-shadow 0.15s ease,
-    border-color 0.15s ease;
+    box-shadow 0.15s ease;
 }
 
 .category img {
@@ -166,16 +162,8 @@ main {
   flex-shrink: 0;
 }
 
-.category-title {
-  font-size: 18px;
-
-  font-weight: 700;
-}
-
 .category:hover {
   transform: translateY(-4px);
-
-  border-color: var(--header);
 
   box-shadow:
     0 8px 20px var(--shadow);
@@ -187,147 +175,123 @@ main {
 
 
 /* =========================
-   盛り付け表示
+   ガイド画面
    ========================= */
 
-.dish-area {
-  margin-top: 42px;
+.guide-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
 
-  text-align: center;
+  height: 72px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  background: var(--header);
+
+  color: #FFFFFF;
+
+  box-shadow:
+    0 4px 15px var(--shadow);
 }
 
-.empty-state {
-  padding: 45px 20px;
-
-  border: 2px dashed var(--line);
-
-  border-radius: 28px;
-}
-
-.empty-state h2 {
-  margin: 20px 0 8px;
-
-  font-size: 19px;
-}
-
-.empty-state p {
+.guide-header h1 {
   margin: 0;
 
-  font-size: 13px;
+  font-size: 23px;
 
-  line-height: 1.8;
+  font-weight: 700;
 }
 
 
-/* お皿 */
+/* 戻る */
 
-.empty-plate {
-  width: 100px;
-  height: 100px;
+.back-button {
+  position: absolute;
 
-  margin: auto;
+  left: 18px;
+
+  width: 44px;
+  height: 44px;
+
+  border: none;
 
   border-radius: 50%;
 
-  background: var(--white);
+  background: rgba(255, 255, 255, 0.2);
 
-  border: 5px solid #E4DDCD;
+  color: #FFFFFF;
 
-  box-shadow:
-    inset 0 0 0 10px #F2EEE3,
-    0 5px 15px var(--shadow);
+  font-family: inherit;
+
+  font-size: 28px;
+
+  line-height: 1;
+
+  cursor: pointer;
+
+  transition:
+    background 0.15s ease,
+    transform 0.15s ease;
+}
+
+.back-button:hover {
+  background: rgba(255, 255, 255, 0.3);
+
+  transform: scale(1.05);
 }
 
 
 /* =========================
-   盛り付け画像
+   ガイド本体
    ========================= */
 
-.dish-title {
-  margin: 0 0 20px;
-
-  font-size: 25px;
-}
-
-.dish-image {
-  display: block;
-
-  width: min(100%, 650px);
+.guide-main {
+  width: min(900px, calc(100% - 32px));
 
   margin: auto;
 
-  border-radius: 22px;
+  padding: 35px 0 60px;
+
+  text-align: center;
+}
+
+.guide-card {
+  padding: 15px;
+
+  background: var(--white);
+
+  border: 1.5px solid var(--line);
+
+  border-radius: 28px;
 
   box-shadow:
     0 8px 25px var(--shadow);
 }
 
-
-/* =========================
-   戻るボタン
-   ========================= */
-
-.back-button {
-  margin-top: 24px;
-
-  padding: 12px 25px;
-
-  border: none;
-
-  border-radius: 999px;
-
-  background: var(--accent);
-
-  color: var(--accent-text);
-
-  font-family: inherit;
-
-  font-size: 14px;
-
-  font-weight: 700;
-
-  cursor: pointer;
-
-  transition:
-    transform 0.15s ease,
-    opacity 0.15s ease;
-}
-
-.back-button:hover {
-  transform: translateY(-2px);
-
-  opacity: 0.9;
-}
-
-
-/* =========================
-   フッター
-   ========================= */
-
-footer {
-  padding: 25px;
-
-  text-align: center;
-
-  border-top: 1px solid var(--line);
-
-  font-size: 13px;
-}
-
-footer p {
-  margin: 0;
-
-  font-weight: 700;
-}
-
-footer span {
+.guide-image {
   display: block;
 
-  margin-top: 5px;
+  width: 100%;
+  max-width: 750px;
 
-  font-size: 11px;
+  height: auto;
 
-  opacity: 0.65;
+  margin: auto;
+
+  border-radius: 18px;
+}
+
+.guide-message {
+  margin: 24px 0 0;
+
+  font-size: 15px;
+
+  line-height: 1.8;
 }
 
 
@@ -338,7 +302,7 @@ footer span {
 @media (max-width: 650px) {
 
   .header {
-    padding: 19px 18px;
+    padding: 17px 18px;
 
     border-radius: 0 0 24px 24px;
   }
@@ -347,7 +311,7 @@ footer span {
     font-size: 30px;
   }
 
-  main {
+  .home-main {
     width: calc(100% - 24px);
 
     padding-top: 32px;
@@ -372,6 +336,8 @@ footer span {
     padding: 9px;
 
     border-radius: 18px;
+
+    font-size: 15px;
   }
 
   .category img {
@@ -381,11 +347,36 @@ footer span {
     border-radius: 12px;
   }
 
-  .category-title {
-    font-size: 15px;
+  .guide-header {
+    height: 64px;
   }
 
-  .dish-image {
-    border-radius: 17px;
+  .guide-header h1 {
+    font-size: 20px;
+  }
+
+  .back-button {
+    left: 12px;
+
+    width: 40px;
+    height: 40px;
+
+    font-size: 25px;
+  }
+
+  .guide-main {
+    width: calc(100% - 20px);
+
+    padding-top: 20px;
+  }
+
+  .guide-card {
+    padding: 8px;
+
+    border-radius: 20px;
+  }
+
+  .guide-image {
+    border-radius: 14px;
   }
 }
