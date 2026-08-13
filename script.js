@@ -6,47 +6,47 @@
 const dishes = {
   classic: {
     title: "定番",
-    image: "classic.png"
+    image: "classic.PNG"
   },
 
   cafe: {
     title: "カフェ風",
-    image: "cafe.png"
+    image: "cafe.PNG"
   },
 
   "japanese food": {
     title: "和食",
-    image: "japanese food.png"
+    image: "japanese food.PNG"
   },
 
   "western-style food": {
     title: "洋食",
-    image: "western-style food.png"
+    image: "western-style food.PNG"
   },
 
   pasta: {
     title: "麺・パスタ",
-    image: "pasta.png"
+    image: "pasta.PNG"
   },
 
   udon: {
     title: "うどん",
-    image: "udon.png"
+    image: "udon.PNG"
   },
 
   fruit: {
     title: "フルーツ",
-    image: "fruit.png"
+    image: "fruit.PNG"
   },
 
   desert1: {
     title: "デザート",
-    image: "desert1.png"
+    image: "desert1.PNG"
   },
 
   desert2: {
     title: "デザート 2",
-    image: "desert2.png"
+    image: "desert2.PNG"
   }
 };
 
